@@ -6,7 +6,7 @@ import socket
 import os
 
 cwd = os.getcwd()
-hostname = (socket.gethostname())
+hostname = socket.gethostbyname(socket.getfqdn())
 
 print hostname
 print cwd
