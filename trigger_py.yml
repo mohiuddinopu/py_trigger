@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Copy file
+    copy: src=../files/test.py dest=/tmp/test.py mode=755
+
+  - name: Execute script
+    shell: /tmp/test.py -c {{ cluster_nm }} -i {{ cm_host }} -l {{ admin_id }} -p {{ admin_pass }}
